@@ -1,0 +1,17 @@
+\usepackage{graphicx, xspace}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\tool}{\textsc{ToolName}\xspace}
+
+\newcommand{\ie}{{\em i.e.,}~}
+\newcommand{\eg}{{\em e.g.,}~}
+
+\newcommand{\incfig}[2]{\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figs/#1}
+    \caption{#2}
+    \label{fig:#1}
+\end{figure}}
