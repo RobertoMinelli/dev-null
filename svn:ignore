@@ -1,0 +1,8 @@
+svn propedit svn:ignore .
+
+*.log
+*.aux
+*.synctex.gz
+*.pdf
+*.blg
+*.out
