@@ -1,17 +1,32 @@
-\usepackage{graphicx, xspace}
+\usepackage{graphicx, xspace, ifthen}
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% Section, Figure, and Table references
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\figref}[1]{Figure~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
+
+% Tools in small case
 \newcommand{\tool}{\textsc{ToolName}\xspace}
 
+% Abbreviations
 \newcommand{\ie}{{\em i.e.,}~}
 \newcommand{\eg}{{\em e.g.,}~}
 
+% Uber-cool way to add figures
 \newcommand{\incfig}[2]{\begin{figure}[ht]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/#1}
     \caption{#2}
     \label{fig:#1}
 \end{figure}}
+
+% To add inline comments.
+\newboolean{showcomments}
+\setboolean{showcomments}{true}
+\ifthenelse{\boolean{showcomments}}
+{\newcommand{\nb}[2]{\fbox{\bfseries\sffamily\scriptsize#1}{\sf\small$\blacktriangleright$\textit{#2}$\blacktriangleleft$}}}
+{\newcommand{\nb}[2]{}}
+\newcommand{\vectornorm}[1]{\left|\left|#1\right|\right|}
+\newcommand\RM[1]{\nb{Roberto}{#1}}
