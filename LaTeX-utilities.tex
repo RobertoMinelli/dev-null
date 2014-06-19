@@ -1,4 +1,4 @@
-\usepackage{graphicx, xspace, ifthen}
+\usepackage{graphicx, xspace, wrapfig, hyperref, ifthen}
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -6,21 +6,37 @@
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\figref}[1]{Figure~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\seeurl}[1]{\footnote{See \url{#1}}}
 
 % Tools in small case
 \newcommand{\tool}{\textsc{ToolName}\xspace}
 
 % Abbreviations
-\newcommand{\ie}{{\em i.e.,}~}
-\newcommand{\eg}{{\em e.g.,}~}
+\newcommand{\etal}{{\em et al.}\xspace}
+\newcommand{\etc}{{\em etc.}\xspace}
+\newcommand{\ie}{{\em i.e.,}\xspace}
+\newcommand{\eg}{{\em e.g.,}\xspace}
 
 % Uber-cool way to add figures
-\newcommand{\incfig}[2]{\begin{figure}[ht]
+\newcommand{\incfig}[4]{\begin{figure}[#1]
     \centering
-    \includegraphics[width=0.9\textwidth]{figs/#1}
-    \caption{#2}
-    \label{fig:#1}
+    \includegraphics[#2]{figs/#3}
+    \caption{#4}
+    \label{fig:#3}
 \end{figure}}
+
+\newcommand{\incfight}[3]{\incfig{ht}{#1}{#2}{#3}}
+
+\newcommand{\incwrapfig}[4]{\begin{wrapfigure}{#1}{#2}
+  \begin{center}
+  	\vspace{-0.75cm}
+    \includegraphics[width=#2]{figs/#3}
+  \end{center}
+  \vspace{-0.55cm}
+  \caption{#4}
+  \vspace{-0.5cm}
+  \label{fig:#3}
+\end{wrapfigure}}
 
 % To add inline comments.
 \newboolean{showcomments}
