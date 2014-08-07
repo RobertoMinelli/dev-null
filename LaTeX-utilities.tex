@@ -1,5 +1,9 @@
 \usepackage{graphicx, xspace, wrapfig, hyperref, ifthen}
 
+% hyperref for validation
+\usepackage[draft=true,hyperfootnotes=false,bookmarks=false]{hyperref}
+\newcommand{\seeurl}[1]{\footnote{See \nolinkurl{#1}}}
+
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
 % Section, Figure, and Table references
