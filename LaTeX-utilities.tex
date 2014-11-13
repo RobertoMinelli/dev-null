@@ -1,11 +1,10 @@
-\usepackage{graphicx, xspace, wrapfig, hyperref, ifthen, amssymb}
+\usepackage{graphicx, xspace, wrapfig, ifthen, amssymb}
 
 % hyperref for validation
 \usepackage[draft=true,hyperfootnotes=false,bookmarks=false]{hyperref}
-\newcommand{\seeurl}[1]{\footnote{See \nolinkurl{#1}}}
 
 % Compress bibliography
-\def\IEEEbibitemsep{1pt plus 0.5cm}
+%\def\IEEEbibitemsep{1pt plus 0.5cm}
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
@@ -13,7 +12,8 @@
 \newcommand{\secref}[1]{Section~\ref{#1}}
 \newcommand{\figref}[1]{Figure~\ref{#1}}
 \newcommand{\tabref}[1]{Table~\ref{#1}}
-\newcommand{\seeurl}[1]{\footnote{See \url{#1}}}
+%\newcommand{\seeurl}[1]{\footnote{See \url{#1}}}
+\newcommand{\seeurl}[1]{\footnote{See \nolinkurl{#1}}}
 
 % Tools in small case
 \newcommand{\tool}{\textsc{ToolName}\xspace}
