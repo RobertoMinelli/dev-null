@@ -1,0 +1,56 @@
+\documentclass[conference]{IEEEtran}
+
+% PAPER ID: XXXXX
+
+\usepackage{graphicx, xspace, wrapfig, ifthen, amssymb, paralist, enumitem}
+%\usepackage{flushend}
+
+% hyperref for validation
+\usepackage[draft=true,hyperfootnotes=false,bookmarks=false]{hyperref}
+
+% Compress bibliography
+%\def\IEEEbibitemsep{0pt plus 0cm}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% Section, Figure, and Table references
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\seeurl}[1]{\footnote{See \nolinkurl{#1}}}
+
+% Tools in small case
+\newcommand{\dfl}{\textsc{DFlow}\xspace}
+\newcommand{\pharo}{\textsc{Pharo}\xspace}
+\newcommand{\eclipse}{\textsc{Eclipse}\xspace}
+
+% Abbreviations
+\newcommand{\etal}{{\em et al.}\xspace}
+\newcommand{\etc}{{\em etc.}\xspace}
+\newcommand{\ie}{{\em i.e.,}\xspace}
+\newcommand{\eg}{{\em e.g.,}\xspace}
+
+\begin{document}
+
+\title{TbD}
+
+\author{\IEEEauthorblockN{Pinco Pallino}
+\IEEEauthorblockA{{\em REVEAL @ Faculty of Informatics --- University of Lugano, Switzerland}}
+}
+
+% make the title area
+\maketitle
+
+\begin{abstract}
+TbD
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+\input{introduction}
+
+% BIBLIOGRAPHY%
+\bibliographystyle{IEEEtran}
+\bibliography{roby-IEEE_paper_template}
+
+\end{document}
